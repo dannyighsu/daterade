@@ -1,14 +1,20 @@
 <div class="center hero-unit">
 <head>
-	<h1>Trender</h1>
-	<h2>Enter Your Search</h2>
+	<h1>daterade</h1>
+	<h2>dates on the go.</h2>
 </head>
 <body>
-	<div id="tfheader">
-		<form id="tfnewsearch" method="get" action="http://www.google.com">
-			<input type="text" class="tftextinput" name="q" size="21" maxlength="120">
-			<input type="submit" value="search" class="tfbutton">
-		</form>
-		<div class="tfclear"></div>
+	<div class="row">
+		<div class="span6" text-align-center align="center">
+			<%= form_for("#") do |f| %>
+				<%= f.label :address, "enter an address" %>
+				<%= f.text_field :address %>
+				<%= f.submit "plan my date!", class: "btn btn-large btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+	<div id="restaurant">
+		
 	</div>
 </body>
+</div>

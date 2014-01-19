@@ -129,6 +129,27 @@ footer {
 	}
 }
 
+/* forms */
+
+input, textarea, select, .uneditable-input {
+	margin-left: auto;
+	margin-right: auto;
+    border: 1px solid #bbb;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.span6 {
+	margin-left: 200px;
+	margin-right: auto;
+}
+
+input {
+    height: auto !important;
+}
+
+/* Search */
+
 #tfheader{
 	background-color: $gray;
 }
