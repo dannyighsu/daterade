@@ -1,4 +1,4 @@
-SampleApp::Application.routes.draw do
+Daterade::Application.routes.draw do
   get "input/new"
   get "users/new"
   root 'static_pages#home'
