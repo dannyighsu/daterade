@@ -4,11 +4,17 @@
 	<h2>Enter Your Search</h2>
 </head>
 <body>
-	<div id="tfheader">
-		<form id="tfnewsearch" method="get" action="http://www.google.com">
-			<input type="text" class="tftextinput" name="q" size="21" maxlength="120">
-			<input type="submit" value="search" class="tfbutton">
-		</form>
-		<div class="tfclear"></div>
+	<div class="row">
+		<div class="span6" text-align-center align="center">
+			<%= form_for("#") do |f| %>
+				<%= f.label :address, "Enter Your Address" %>
+				<%= f.text_field :address %>
+				<%= f.submit "Plan my Date!", class: "btn btn-large btn-primary" %>
+			<% end %>
+		</div>
+	</div>
+	<div id="restaurant">
+		
 	</div>
 </body>
+</div>
