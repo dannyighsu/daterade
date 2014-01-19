@@ -6,11 +6,16 @@ $grayMediumLight: #eaeaea;
 
 html {
 	overflow-y: scroll;
+	background: url(dark_world.jpg) no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 body {
 	padding-top: 60px;
-	background-color: black;
+	background-color: transparent;
 }
 
 section {
@@ -42,6 +47,12 @@ textarea {
 	color: white;
 	h1 {
 		margin-bottom: 10px;
+	}
+	a {
+		color: #00CCFF;
+		&:hover {
+			color: #3366FF;
+		}
 	}
 }
 
@@ -115,11 +126,12 @@ footer {
     margin-top: 45px;
     padding-top: 5px;
     border-top: 1px solid #eaeaea;
-    color: $grayLight;
+	background-color: black;
+    color: $white;
 	a {
-		color: $grayLight;
+		color: white;
 		&:hover {
-			color: $gray;
+			color: $grayLight;
 		}
 	}
 	small {
