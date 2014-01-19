@@ -1,14 +1,271 @@
 <% provide(:title, 'your date') %>
 <!DOCTYPE html>
 <html>
-<div id="container">
+<script type="text/javascript" src="sessionvars.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="description" content="Website Vertical Scrolling with jQuery" />
+<meta name="keywords" content="jquery, vertical, scrolling, scroll, smooth"/>
+<div class="section" id="section1">
 <head>
 	<div id="match">
 	<h1><font color="white">enjoy your date.</font></h1>
 	<h3><font color=FF3333>may it quench your thirst.</font></h3>
+	<h2>click the bottle to scroll</h2>
 	</div>
 </head>
 <body>
+	<div id="button" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section2" %>
+	</div>
+	<div class="center hero-unit">
+		<h6>Rivoli Restaurant</h6>
+		<h4>"Rivoli holds a special place in my heart. Every time I have dinner there, I have an exceptional dinning experience. This has become my expectation, no..."</h4>
+		<h5>4 stars</h5>
+	</div>
+	<div class="center hero-unit">
+		<h6>Phoebe Hearst Museum</h6>
+		<h4>"My guess is that there are plenty of Cal Students who spend their 4 years here and walk right past this place without giving it a second thought. I first..."</h4>
+		<h5>4 stars</h5>
+	</div>
+	<div class="center hero-unit">
+	</div>
+</body>
+</div>
+<div class="section" id="section2">
+<head>
+	<div id="match">
+		<div class="divider">
+		</div>
+	</div>
+</head>
+<body>
+	<div id="button" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section3" %>
+	</div>
+	<div id="button1" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section1" %>
+	</div>
+	<div class="center hero-unit">
+		<h6>Venus Restaurant</h6>
+		<h4>"I have been coming here for almost 11 years and the food never fails. Usually in the past I've came here for dinner and vaguely remember having a rosemary..."</h4>
+		<h5>4 stars</h5>
+	</div>
+	<div class="center hero-unit">
+		<h6>Golden Gate Live Steamers</h6>
+		<h4>"I have seen the sign for the steam train for years - and have popped down the hill on the trail into the backside of this attraction a few times while..."</h4>
+		<h5>4 stars</h5>
+	</div>
+	<div class="center hero-unit">
+	</div>
+</body>
+</div>
+<div class="section" id="section3">
+<head>
+	<div id="match">
+		<div class="divider">
+		</div>
+	</div>
+</head>
+<body>
+	<div id="button" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section4" %>
+	</div>
+	<div id="button1" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section2" %>
+	</div>
+	<div class="center hero-unit">
+		<h6>Angeline's Louisiana Kitchen</h6>
+		<h4>"Back again! So worth the wait! If you're an impatient foodie get here early no reservations taken. Not a fan of Mac & Cheese but this Mac & Cheese is to die..."</h4>
+		<h5>4 stars</h5>
+	</div>
+	<div class="center hero-unit">
+		<h6>Tilden Regional Park</h6>
+		<h4>"Oh man I am defs feeling this place! I inputted the address that Yelp provided but it didnt lead me directly inside the park so once I got in the general..."</h4>
+		<h5>4.5 stars</h5>
+	</div>
+	<div class="center hero-unit">
+	</div>
+</body>
+</div>
+<div class="section" id="section4">
+<head>
+	<div id="match">
+		<div class="divider">
+		</div>
+	</div>
+</head>
+<body>
+	<div id="button" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section5" %>
+	</div>
+	<div id="button1" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section3" %>
+	</div>
+	<div class="center hero-unit">
+		<h6>Chez Panisse</h6>
+		<h4>"For the past 4 years of my college experience, I have dreamt about coming to Chez Panisse but never made that dream a reality, until today. I am still..."</h4>
+		<h5>4 stars</h5>
+	</div>
+	<div class="center hero-unit">
+		<h6>Berkeley Juneteenth Music Festival</h6>
+		<h4>"So, I tried to eat healthy today. After my run, I ate some yogurt. For lunch a kale salad. So far, so good. Then I tried to go to Washingtown laundromat...."</h4>
+		<h5>4 stars</h5>
+	</div>
+	<div class="center hero-unit">
+	</div>
+</body>
+</div>
+<div class="section" id="section5">
+<head>
+	<div id="match">
+		<div class="divider">
+		</div>
+	</div>
+</head>
+<body>
+	<div id="button" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section6" %>
+	</div>
+	<div id="button1" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section4" %>
+	</div>
+	<div class="center hero-unit">
+		<h6>Revival Bar & Kitchen</h6>
+		<h4>"Went here just for desserts and drinks so far. I can't believe I never knew about this place my first 3 years at Berkeley! It's hidden on the corner of..."</h4>
+		<h5>3.5 stars</h5>
+	</div>
+	<div class="center hero-unit">
+		<h6>Codornices Park</h6>
+		<h4>"CONCRETE SLIDE!!! I'm too old to play here during the day, so I come back at night and release my inner child. Did I mention there's fire pit in the back,..."</h4>
+		<h5>4.5 stars</h5>
+	</div>
+	<div class="center hero-unit">
+	</div>
+</body>
+</div>
+<div class="section" id="section6">
+<head>
+	<div id="match">
+		<div class="divider">
+		</div>
+	</div>
+</head>
+<body>
+	<div id="button" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section7" %>
+	</div>
+	<div id="button1" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section5" %>
+	</div>
+	<div class="center hero-unit">
+		<h6>Gather</h6>
+		<h4>"Gather is a delicious, beautiful restaurant located close to the UC Berkeley campus. A friend and I shared the holiday duck pizza, and it was fabulous. We..."</h4>
+		<h5>4 stars</h5>
+	</div>
+	<div class="center hero-unit">
+		<h6>Studio 12</h6>
+		<h4>"Azzia and Andrej run this place like pros. Azzia returns calls in record time. The space is beautiful and affordable. It's probably my favorite space in the..."</h4>
+		<h5>5 stars</h5>
+	</div>
+	<div class="center hero-unit">
+	</div>
+</body>
+</div>
+<div class="section" id="section7">
+<head>
+	<div id="match">
+		<div class="divider">
+		</div>
+	</div>
+</head>
+<body>
+	<div id="button" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section8" %>
+	</div>
+	<div id="button1" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section6" %>
+	</div>
+	<div class="center hero-unit">
+		<h6>Kirala Japanese Restaurant</h6>
+		<h4>"The food here is a cut above all other japanese restaurants I've visited in the bay area. Granted, I haven't been to too many, but the food is still pretty..."</h4>
+		<h5>4 stars</h5>
+	</div>
+	<div class="center hero-unit">
+		<h6>Shattuck Cinemas</h6>
+		<h4>"Now this is what doing to the movies should be like! None of that walking on eggshells, avoiding touching anything, sitting on the edge of a filthy seat,..."</h4>
+		<h5>4 stars</h5>
+	</div>
+	<div class="center hero-unit">
+	</div>
+</body>
+</div>
+<div class="section" id="section8">
+<head>
+	<div id="match">
+		<div class="divider">
+		</div>
+	</div>
+</head>
+<body>
+	<div id="button" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section9" %>
+	</div>
+	<div id="button1" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section7" %>
+	</div>
+	<div class="center hero-unit">
+		<h6>Lo Coco's</h6>
+		<h4>"We found this little place last July for our daughter's birthday. The food was amazing! The chef comes out and makes recommendations, and with his input..."</h4>
+		<h5>5 stars</h5>
+	</div>
+	<div class="center hero-unit">
+		<h6>Tai Chi Berkeley</h6>
+		<h4>"I have been studying tai chi for more than four years with Lenzie Williams and his student Jane Sharp. Tai Chi turns out to be surprisingly challenging. And..."</h4>
+		<h5>5 stars</h5>
+	</div>
+	<div class="center hero-unit">
+	</div>
+</body>
+</div>
+<div class="section" id="section9">
+<head>
+	<div id="match">
+		<div class="divider">
+		</div>
+	</div>
+</head>
+<body>
+	<div id="button" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section11" %>
+	</div>
+	<div id="button1" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section8" %>
+	</div>
+	<div class="center hero-unit">
+		<h6>Skates on the Bay</h6>
+		<h4>"My husband and I had our Rehersal dinner at Skates. We have also been to Horatio's and Palominos. We chose Skates because it was closest to our wedding..."</h4>
+		<h5>3.5 stars</h5>
+	</div>
+	<div class="center hero-unit">
+		<h6>Berkeley Potters Guild</h6>
+		<h4>"The BPG is a really fun place to visit, and a foolproof source for unique gifts. It's cool to see the artists' work spaces and if you go during a sale you..."</h4>
+		<h5>5 stars</h5>
+	</div>
+	<div class="center hero-unit">
+	</div>
+</body>
+</div>
+<div class="section" id="section10">
+<head>
+	<div id="match">
+		<div class="divider">
+		</div>
+	</div>
+</head>
+<body>
+	<div id="button1" class="but">
+		<%= link_to image_tag("logo.png", alt: "", height: "51", width: '51'), "#section9" %>
+	</div>
 	<div class="center hero-unit">
 	</div>
 	<div class="center hero-unit">
@@ -17,4 +274,24 @@
 	</div>
 </body>
 </div>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>		
+<script type="text/javascript" src="jquery.easing.1.3.js"></script>
+<script type="text/javascript">
+    $(function() {
+        $('div.but a').bind('click',function(event){
+            var $anchor = $(this);
+            
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1500,'easeInOutExpo');
+            /*
+            if you don't want to use the easing effects:
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1000);
+            */
+            event.preventDefault();
+        });
+    });
+</script>
 </html>

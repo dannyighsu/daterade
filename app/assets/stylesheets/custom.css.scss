@@ -18,10 +18,6 @@ body {
 	background-color: transparent;
 }
 
-section {
-	overflow: auto;
-}
-
 .hero-unit {
 	color: black;
 	background: $grayDark;
@@ -34,13 +30,30 @@ section {
 	background: transparent;
 }
 
-#container {
-	background-color: #181818;
-	border-radius: 15px;
-}
-
 #page {
 	background: black;
+}
+
+#button {
+	position: absolute;
+	float: right;
+	right: 150px;
+	margin-top: 200px;
+}
+
+.divider {
+	height:150px;
+}
+
+#button1 {
+	position: absolute;
+	float: left;
+	left: 150px;
+	margin-top: 200px;
+}
+
+.section {
+	margin-bottom: 500px;
 }
 
 textarea {
@@ -88,6 +101,22 @@ h3 {
 	font-size: 1.6em;
 	letter-spacing: -1px;
 	text-align: center;
+}
+
+h4 {
+	
+}
+
+h5 {
+	color: #FF3333;
+	font-size: 1.8em;
+	float: right;
+	margin-bottom: 15px;
+}
+
+h6 {
+	color: #FF3333;
+	font-size: 2.2em;
 }
 
 p {

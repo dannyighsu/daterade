@@ -1,7 +1,9 @@
 Daterade::Application.routes.draw do
+  resources :input
   get "input/new"
   get "users/new"
   root 'static_pages#home'
+  match '/new', to: 'input#new', via: 'get'
   match '/match', to: 'static_pages#match', via: 'get'
   match '/error', to: 'static_pages#error', via: 'get'
   match '/signup', to: 'users#new', via: 'get'
