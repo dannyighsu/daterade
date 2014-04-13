@@ -2,9 +2,6 @@
 <!DOCTYPE html>
 <html>
 <script type="text/javascript" src="sessionvars.js"></script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-<meta name="description" content="Website Vertical Scrolling with jQuery" />
-<meta name="keywords" content="jquery, vertical, scrolling, scroll, smooth"/>
 <div class="section" id="section1">
 <head>
 	<div id="match">
@@ -284,12 +281,6 @@
             $('html, body').stop().animate({
                 scrollTop: $($anchor.attr('href')).offset().top
             }, 1500,'easeInOutExpo');
-            /*
-            if you don't want to use the easing effects:
-            $('html, body').stop().animate({
-                scrollTop: $($anchor.attr('href')).offset().top
-            }, 1000);
-            */
             event.preventDefault();
         });
     });

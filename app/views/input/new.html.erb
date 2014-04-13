@@ -5,28 +5,26 @@
 <script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
 <script src="/assets/gmap3.js?body=1" type="text/javascript"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+</script>
 <script type="text/javascript">
-sessvars.myObj = generate_restaurant(sessvars.str);
-generate_attraction(sessvars.str)
-var rv = new Array();
+alert(generate_restaurant(sessvars.str) + "hi");
 document.location.href="../match";
-var restaurant_list = new Array();
-var attraction_list = new Array();
 function generate_restaurant(var1)
 {
-	
 	var auth = {
-	  //
-	  // Update with your auth tokens.
-	  //
-	  consumerKey: "CyuobtCmBgwBU0EiFnedJA", 
-	  consumerSecret: "BbfsvMDUCmGbJUfRMezwy8L0STM",
-	  accessToken: "ZHuWjGBZuA1uo_ttsbHolbI5ghDXOb0A",
-	  accessTokenSecret: "agD8fy7oQibPJZy0pGBPGlGBl_U",
-	  serviceProvider: { 
-	    signatureMethod: "HMAC-SHA1"
-	  }
+		//
+		// Update with your auth tokens.
+		//
+		consumerKey: "CyuobtCmBgwBU0EiFnedJA", 
+		consumerSecret: "BbfsvMDUCmGbJUfRMezwy8L0STM",
+		accessToken: "ZHuWjGBZuA1uo_ttsbHolbI5ghDXOb0A",
+		accessTokenSecret: "agD8fy7oQibPJZy0pGBPGlGBl_U",
+		serviceProvider: { 
+			signatureMethod: "HMAC-SHA1"
+	  	}
 	};
+	
 	var terms = 'dinner';
 	var near = var1;
 	//var sort = 2
@@ -38,6 +36,7 @@ function generate_restaurant(var1)
 	  consumerSecret: auth.consumerSecret,
 	  tokenSecret: auth.accessTokenSecret
 	};
+	
 	parameters = [];
 	parameters.push(['term', terms]);
 	parameters.push(['location', near]);
@@ -50,6 +49,7 @@ function generate_restaurant(var1)
 	parameters.push(['oauth_token', auth.accessToken]);
 	//parameters.push(['radius_filter', radius_filter]);
 	parameters.push(['oauth_signature_method', 'HMAC-SHA1']);
+	
 	var message = { 
 	  'action': 'http://api.yelp.com/v2/search',
 	  'method': 'GET',
@@ -57,60 +57,60 @@ function generate_restaurant(var1)
 	};
 
 	function Restaurant(rest_name, snippet, rating, address, phone_number) {
-    
 	    this.rest_name = rest_name;
 	    this.phone_number = phone_number;
 	    this.address = address;
 	    this.snippet = snippet;
 	    this.rating = rating;
-
 	    this.rest_name = this.rest_name.fontsize(24);
-
 	    this.getInfo = function() {
-	       return this.attraction_name.bold() + "<br>" + this.snippet.bold() + "<br>" + this.rating + "<br>" + this.address + "<br>" + this.phone_number + "<br><br>";
+	    	return this.attraction_name.bold() + "<br>" + this.snippet.bold() + "<br>" + 			 this.rating + "<br>" + this.address + "<br>" + this.phone_number + "<br><br>";
 	  }
-	}
+	}	
 
 	OAuth.setTimestampAndNonce(message);
 	OAuth.SignatureMethod.sign(message, accessor);
 	var parameterMap = OAuth.getParameterMap(message.parameters);
-	parameterMap.oauth_signature = OAuth.percentEncode(parameterMap.oauth_signature)
+	parameterMap.oauth_signature = OAuth.percentEncode(parameterMap.oauth_signature);
 	console.log(parameterMap);
+	alert('hi');
+
 	$.ajax({
-	  'url': message.action,
-	  'data': parameterMap,
-	  'cache': true,
-	  'dataType': 'jsonp',
-	  'jsonpCallback': 'cb',
-	  'success': function(data, textStats, XMLHttpRequest) {
-	    console.log(data);
-	    var output = prettyPrint(data);
-	    for (i = 0; i < data.businesses.length; i++) {
-	      var restaurant = new Restaurant(data.businesses[i].name, data.businesses[i].snippet_text, data.businesses[i].rating, data.businesses[i].location.display_address, data.businesses[i].display_phone);
+		'url': message.action,
+	    'data': parameterMap,
+	    'cache': true,
+	    'dataType': 'jsonp',
+	    'jsonpCallback': 'cb',
+	    'success': function(data, textStats, XMLHttpRequest) {
+	    	console.log(data);
+	  	  	var output = prettyPrint(data);
+			
+	   	 	for (i = 0; i < data.businesses.length; i++) {
+	    	var restaurant = new Restaurant(data.businesses[i].name, data.businesses[i].snippet_text, data.businesses[i].rating, data.businesses[i].location.display_address, data.businesses[i].display_phone);
 	      restaurant_list.push(restaurant);
 	    }
 	  }
-	});
+	});	
 	return restaurant_list;
 }
+
+
 function generate_attraction(var1) {
-
-
-
 	var auth = { 
-	  //
-	  // Update with your auth tokens.
-	  //
-	  consumerKey: "CyuobtCmBgwBU0EiFnedJA", 
-	  consumerSecret: "BbfsvMDUCmGbJUfRMezwy8L0STM",
-	  accessToken: "ZHuWjGBZuA1uo_ttsbHolbI5ghDXOb0A",
-	  // This example is a proof of concept, for how to use the Yelp v2 API with javascript.
-	  // You wouldn't actually want to expose your access token secret like this in a real application.
-	  accessTokenSecret: "agD8fy7oQibPJZy0pGBPGlGBl_U",
-	  serviceProvider: { 
-	    signatureMethod: "HMAC-SHA1"
-	  }
+		//
+		// Update with your auth tokens.
+		//
+		consumerKey: "CyuobtCmBgwBU0EiFnedJA", 
+		consumerSecret: "BbfsvMDUCmGbJUfRMezwy8L0STM",
+		accessToken: "ZHuWjGBZuA1uo_ttsbHolbI5ghDXOb0A",
+		// This example is a proof of concept, for how to use the Yelp v2 API with javascript.
+		// You wouldn't actually want to expose your access token secret like this in a real application.
+		accessTokenSecret: "agD8fy7oQibPJZy0pGBPGlGBl_U",
+		serviceProvider: { 
+			signatureMethod: "HMAC-SHA1"
+		}
 	};
+	
 	//var category = 'restaurant, food'
 	//var radius_filter = 5;
 	//var sort = 2
@@ -119,8 +119,8 @@ function generate_attraction(var1) {
 	var limit = 40;
 
 	var accessor = {
-	  consumerSecret: auth.consumerSecret,
-	  tokenSecret: auth.accessTokenSecret
+	    consumerSecret: auth.consumerSecret,
+	    tokenSecret: auth.accessTokenSecret
 	};
 	parameters = [];
 	parameters.push(['term', terms]);
@@ -135,9 +135,9 @@ function generate_attraction(var1) {
 	//parameters.push(['radius_filter', radius_filter]);
 	parameters.push(['oauth_signature_method', 'HMAC-SHA1']);
 	var message = { 
-	  'action': 'http://api.yelp.com/v2/search',
-	  'method': 'GET',
-	  'parameters': parameters 
+	    'action': 'http://api.yelp.com/v2/search',
+	    'method': 'GET',
+	    'parameters': parameters 
 	};
 
 	function Attraction(attraction_name, snippet, rating, address, phone_number) {
@@ -151,7 +151,7 @@ function generate_attraction(var1) {
 	    this.attraction_name = this.attraction_name.fontsize(24);
 
 	    this.getInfo = function() {
-	      return this.attraction_name.bold() + "<br>" + this.snippet.bold() + "<br>" + this.rating + "<br>" + this.address + "<br>" + this.phone_number + "<br><br>";
+	    	return this.attraction_name.bold() + "<br>" + this.snippet.bold() + "<br>" + 			 this.rating + "<br>" + this.address + "<br>" + this.phone_number + "<br><br>";
 	    };
 	  }
 	OAuth.setTimestampAndNonce(message);
@@ -160,13 +160,13 @@ function generate_attraction(var1) {
 	parameterMap.oauth_signature = OAuth.percentEncode(parameterMap.oauth_signature);
 	console.log(parameterMap);
 	$.ajax({
-	  'url': message.action,
-	  'data': parameterMap,
-	  'cache': true,
-	  'dataType': 'jsonp',
-	  'jsonpCallback': 'cb',
-	  'success': function(data, textStats, XMLHttpRequest) {
-	    console.log(data);
+		'url': message.action,
+		'data': parameterMap,
+		'cache': true,
+		'dataType': 'jsonp',
+		'jsonpCallback': 'cb',
+		'success': function(data, textStats, XMLHttpRequest) {
+		console.log(data);
 	    
 		for (i = 0; i < data.businesses.length; i++) {
 	        var attraction = new Attraction(data.businesses[i].name, data.businesses[i].snippet_text, data.businesses[i].rating, data.businesses[i].location.display_address, data.businesses[i].display_phone);
@@ -174,6 +174,7 @@ function generate_attraction(var1) {
 	    } 
 	  }
 	});
+
 	return attraction_list;
 }
 var temp = restaurant_list[9];
