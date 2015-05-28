@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140119021439) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "inputs", force: true do |t|
     t.string   "address"
     t.float    "latitude"
@@ -32,6 +29,6 @@ ActiveRecord::Schema.define(version: 20140119021439) do
     t.string   "password_digest"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

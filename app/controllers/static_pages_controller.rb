@@ -11,4 +11,9 @@ class StaticPagesController < ApplicationController
   def contact
   end
 
+  def match
+    input = params[:input]
+    
+  end
+
 end
