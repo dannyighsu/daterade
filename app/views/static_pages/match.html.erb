@@ -2,14 +2,23 @@
 
 <script type="text/javascript">
   $(function() {
-	$('div.but a').bind('click', function(event){
-	  var $anchor = $(this);
+		$('div.but a').bind('click', function(event){
+		  var $anchor = $(this);
 
-	  $('html, body').stop().animate({
-		scrollTop: $($anchor.attr('href')).offset().top
-	  }, 1500,'easeInOutExpo');
+		  $('html, body').stop().animate({
+			scrollTop: $($anchor.attr('href')).offset().top
+		  }, 1500,'easeInOutExpo');
 
-	  event.preventDefault();
-	});
+		  event.preventDefault();
+		});
   });
 </script>
+
+<% @responses.each do |r| %>
+	<div class='center hero-unit'>
+		<img src=<%= r.image_url %>></img>
+		<img src=<%= r.rating_img_url %>></img>
+		<%= link_to r.name, r.url %>
+		<%= r.location.address %>
+	</div>
+<% end %>
