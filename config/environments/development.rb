@@ -32,6 +32,7 @@ Daterade::Application.configure do
     ENV['Yelp_Key'] = Rails.application.secrets.yelp['consumer_key']
     ENV['Yelp_Token'] = Rails.application.secrets.yelp['token']
     ENV['Yelp_Token_Secret'] = Rails.application.secrets.yelp['token_secret']
+    ENV['Google_Key'] = Rails.application.secrets.google['api_key']
   end
 
 end

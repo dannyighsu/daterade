@@ -14,11 +14,31 @@
   });
 </script>
 
-<% @responses.each do |r| %>
+<% @results.each do |key, result| %>
+	<% r = result[0]["hash"] %>
+	<% a = result[1]["hash"] %>
 	<div class='center hero-unit'>
-		<img src=<%= r.image_url %>></img>
-		<img src=<%= r.rating_img_url %>></img>
-		<%= link_to r.name, r.url %>
-		<%= r.location.address %>
+		<% if !r["image_url"].nil? %>
+			<img src=<%= r["image_url"] %>></img>
+		<% else %>
+			<%= image_tag('no_image.png') %>
+		<% end %>
+		<img src=<%= r["rating_img_url"] %>></img>
+		<%= link_to r["name"], r["url"] %>
+		<% restaurant_addr = r["location"]["address"][0] + ' ' + r["location"]["city"] + ', ' + r["location"]["state_code"] + ' ' + r["location"]["postal_code"] %>
+		<%= restaurant_addr %>
+
+		</br>
+
+		<% if !a["image_url"].nil? %>
+			<img src=<%= a["image_url"] %>></img>
+		<% else %>
+			<%= image_tag('no_image.png') %>
+		<% end %>
+		<img src=<%= a["rating_img_url"] %>></img>
+		<%= link_to a["name"], a["url"] %>
+		<% attraction_addr = a["location"]["address"][0] + ' ' + a["location"]["city"] + ', ' + a["location"]["state_code"] + ' ' + a["location"]["postal_code"] %>
+		<%= attraction_addr %>
 	</div>
+	</br>
 <% end %>

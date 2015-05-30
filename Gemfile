@@ -5,6 +5,8 @@ gem 'rails', '4.1.1'
 gem 'bootstrap-sass'
 gem 'bcrypt'
 gem 'yelp', require: 'yelp'
+gem 'httparty'
+gem 'json'
 
 group :development, :test do
   gem 'rspec-rails', '2.13.1'
