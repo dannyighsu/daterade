@@ -1,12 +1,14 @@
 @import "bootstrap";
 
 $grayMediumLight: #eaeaea;
+$grayDark: #4c4c4c;
+$grayLight: #949494;
 
 /* universal */
 
 html {
 	overflow-y: scroll;
-	background: asset-url('dark_world.png') no-repeat center center fixed; 
+	background: asset-url('dark_world.png') no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -104,7 +106,7 @@ h3 {
 }
 
 h4 {
-	
+
 }
 
 h5 {
@@ -168,7 +170,7 @@ footer {
     padding-top: 5px;
     border-top: 1px solid #eaeaea;
 	background-color: black;
-    color: $white;
+    color: white;
     color: $grayLight;
 	background-color: black !important;
 	a {
