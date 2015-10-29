@@ -20,9 +20,19 @@ body {
 	background-color: transparent;
 }
 
-.hero-unit {
+.jumbotron {
 	color: black;
-	background: $grayDark;
+	background: rgba(90, 90, 90, 0.8);
+}
+
+#searchTextField {
+	border-radius: 5px;
+	margin-left: -150px;
+	color: black;
+}
+
+#what-is-this {
+	margin-left: -200px;
 }
 
 .container {
@@ -198,7 +208,6 @@ input, textarea, select, .uneditable-input {
 	margin-left: auto;
 	margin-right: auto;
     border: 1px solid #bbb;
-    width: 100%;
     margin-bottom: 15px;
 }
 

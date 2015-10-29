@@ -17,7 +17,7 @@
 <% @results.each do |key, result| %>
 	<% r = result[0]["hash"] %>
 	<% a = result[1]["hash"] %>
-	<div class='center hero-unit'>
+	<div class='center jumbotron'>
 		<% if !r["image_url"].nil? %>
 			<img src=<%= r["image_url"] %>></img>
 		<% else %>
